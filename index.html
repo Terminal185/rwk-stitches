@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>RWK Embroideries</title>
+        <style>
+            .navbar {
+                background-color: black;
+                margin-bottom: 50px;
+                text-align: center;
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
+                z-index: 9999;
+                box-sizing: border-box;
+                display: block;
+            }
+            .navlink {
+                font-family: "";
+                padding: 10px;
+                margin-left: 40px;
+                font-size: 30px;
+                color: white;
+                text-decoration: none;
+                display: inline-block;
+            }
+            .navlink:hover {
+                background-color: gray;
+            }
+            .title {
+                font-size: 50px;
+                text-align: center;
+            }
+            .footer {
+                text-align: center;
+                background-color: black;
+                color: white;
+            }
+            .imageCarousel {
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+            }
+            a:visited {
+                color: white;
+            }
+        </style>
+        <script type="module">
+          // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+
+          // Your web app's Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyDS4vjnWCs79-WO2LCXlN4PDEdPCziSB5M",
+            authDomain: "rwkstitches.firebaseapp.com",
+            projectId: "rwkstitches",
+            storageBucket: "rwkstitches.appspot.com",
+            messagingSenderId: "1021445488584",
+            appId: "1:1021445488584:web:af6773279a23f7eacc8afd"
+          };
+
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+        </script>
+        <script>
+            var imageNames = ["image0.jpeg", "image1.jpeg", "image2.jpeg", "image3.jpg", "image4.jpg"]
+            var maxImageIndex = 4 // 5 images available
+            var imageIndex = 0
+            setInterval(function() {
+                console.log(`Timer executed. Index: ${imageIndex}`)
+                if (imageIndex == maxImageIndex) {
+                    imageIndex = 0
+                }
+                else {
+                    imageIndex++
+                }
+                document.getElementById("imageCarousel").src = imageNames[imageIndex]
+            }, 5000)
+        </script>
+    </head>
+    <body>
+        <p class="title">RWK Stitches</p>
+        <nav class="navbar">
+            <a href="index.html" class="navlink">Home</a>
+            <a href="About.html" class="navlink">About</a>
+            <a href="ContactUs.html" class="navlink">Contact Us</a>
+        </nav>
+        <image src="image0.jpeg" width="500px" height="500px" id="imageCarousel" class="imageCarousel"></image>
+        <br>
+        <br>
+        <footer class="footer">
+            Copyright RWK Embroideries 2023©<br>
+            Find us on:
+            <a href="#"><image name="/facebook.png" alt="Facebook Logo"></a>
+        </footer>
+    </body>
+</html>
